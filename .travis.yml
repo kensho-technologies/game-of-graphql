@@ -7,7 +7,6 @@ python:
 install:
   - pip install -r dev-requirements.txt
   - pip install -r requirements.txt
-  - pip install -e game_of_graphql
 script:
   - pydocstyle game_of_graphql/
   - isort --check-only --verbose --recursive game_of_graphql/
