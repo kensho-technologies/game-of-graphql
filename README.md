@@ -1,5 +1,8 @@
 # Game of GraphQL
 
+[![Build Status](https://travis-ci.org/kensho-technologies/game-of-graphql.svg?branch=master)](https://travis-ci.org/kensho-technologies/game-of-graphql)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 Play around with compiled GraphQL queries using OrientDB's built-in Game of Thrones data set.
 
 Get started:
@@ -27,3 +30,12 @@ This project builds upon and extends a dataset provided by the OrientDB team
 (https://orientdb.com/public-databases/GamesOfThrones.zip). The world of Game of Thrones
 includes themes not appropriate for all audiences, discretion is advised.
 This project is being made available for educational and informational purposes.
+
+## License
+
+Licensed under the Apache 2.0 License. Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language
+governing permissions and limitations under the License.
+
+Copyright 2018 Kensho Technologies, Inc.
