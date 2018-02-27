@@ -1,0 +1,8 @@
+# docs here: https://pyup.io/docs/configuration/
+
+update: all
+
+assignees:
+  - obi1kenobi
+
+pr_prefix: "pyup: "

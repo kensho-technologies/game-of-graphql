@@ -1,0 +1,21 @@
+version: "3"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/server.Dockerfile
+    image: game-of-graphql-web
+    ports:
+      - "127.0.0.1:5000:5000"
+    command: ["python2", "-m", "game_of_graphql.server", "--host", "0.0.0.0",
+              "--graph-location", "orientdb:2424", "--graph-password", "game-of-graphql"]
+  orientdb:
+    build:
+      context: .
+      dockerfile: ./docker/orientdb.Dockerfile
+    image: game-of-graphql-orientdb
+    ports:
+      - "127.0.0.1:2480:2480"
+      - "127.0.0.1:2424:2424"
+    environment:
+      ORIENTDB_ROOT_PASSWORD: game-of-graphql

@@ -1,0 +1,70 @@
+# Copyright 2017 Kensho Technologies, Inc.
+schema {
+    query: RootSchemaQuery
+}
+
+scalar Date
+
+scalar DateTime
+
+directive @filter(value: [String!]!, op_name: String!) on FIELD | INLINE_FRAGMENT
+
+directive @tag(tag_name: String!) on FIELD
+
+directive @output(out_name: String!) on FIELD
+
+directive @output_source on FIELD
+
+directive @optional on FIELD
+
+directive @fold on FIELD
+
+directive @recurse(depth: Int!) on FIELD
+
+interface CharacterOrHouse {
+    name: String
+    alias: [String]
+    uuid: ID
+
+    in_Owes_Allegiance_To: [CharacterOrHouse]
+    out_Owes_Allegiance_To: [CharacterOrHouse]
+}
+
+type Character implements CharacterOrHouse {
+    name: String
+    alias: [String]
+    uuid: ID
+
+    in_Owes_Allegiance_To: [CharacterOrHouse]
+    out_Owes_Allegiance_To: [CharacterOrHouse]
+    out_Lives_In: [Region]
+}
+
+type NobleHouse implements CharacterOrHouse {
+    name: String
+    alias: [String]
+    motto: [String]
+    uuid: ID
+
+    in_Owes_Allegiance_To: [CharacterOrHouse]
+    out_Owes_Allegiance_To: [CharacterOrHouse]
+    out_Has_Seat: [Region]
+}
+
+type Region {
+    name: String
+    alias: [String]
+    uuid: ID
+
+    out_Has_Parent_Region: [Region]
+    in_Has_Parent_Region: [Region]
+    in_Has_Seat: [NobleHouse]
+    in_Lives_In: [Character]
+}
+
+type RootSchemaQuery {
+    CharacterOrHouse: CharacterOrHouse
+    Character: Character
+    NobleHouse: NobleHouse
+    Region: Region
+}
