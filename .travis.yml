@@ -7,12 +7,8 @@ python:
 install:
   - pip install -r dev-requirements.txt
   - pip install -r requirements.txt
-  - pip install -e .
 script:
-  - pydocstyle example_package/
-  - isort --check-only --verbose --recursive example_package/
-  - pylint example_package/
-  - bandit -r example_package/
-  - py.test --cov=example_package example_package/tests
-after_success:
-  - coveralls
+  - pydocstyle game_of_graphql/
+  - isort --check-only --verbose --recursive game_of_graphql/
+  - pylint game_of_graphql/
+  - bandit -r game_of_graphql/
