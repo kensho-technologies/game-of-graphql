@@ -22,6 +22,7 @@ directive @fold on FIELD
 directive @recurse(depth: Int!) on FIELD
 
 interface CharacterOrHouse {
+    _x_count: Int
     name: String
     alias: [String]
     uuid: ID
@@ -31,6 +32,7 @@ interface CharacterOrHouse {
 }
 
 type Character implements CharacterOrHouse {
+    _x_count: Int
     name: String
     alias: [String]
     uuid: ID
@@ -41,6 +43,7 @@ type Character implements CharacterOrHouse {
 }
 
 type NobleHouse implements CharacterOrHouse {
+    _x_count: Int
     name: String
     alias: [String]
     motto: [String]
@@ -52,6 +55,7 @@ type NobleHouse implements CharacterOrHouse {
 }
 
 type Region {
+    _x_count: Int
     name: String
     alias: [String]
     uuid: ID

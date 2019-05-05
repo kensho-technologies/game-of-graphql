@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM python:3.7
 
 WORKDIR /app
 
@@ -11,4 +11,4 @@ RUN pip install -r dev-requirements.txt && \
 
 EXPOSE 5000
 
-CMD ["python2", "-m", "game_of_graphql.server", "--host", "0.0.0.0"]
+CMD ["python", "-m", "game_of_graphql.server", "--host", "0.0.0.0"]

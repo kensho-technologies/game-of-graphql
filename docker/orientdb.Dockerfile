@@ -1,4 +1,4 @@
-FROM orientdb:2.2.29
+FROM orientdb:2.2.37
 
 ENV ORIENTDB_GAME_OF_THRONES_DB_URL https://orientdb.com/public-databases/GamesOfThrones.zip
 ENV DB_ZIP_FILE_PATH /orientdb/GamesOfThrones.zip
