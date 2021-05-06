@@ -1,5 +1,5 @@
 click==6.7
-flask-cors==3.0.3
+flask-cors==3.0.9
 Flask==0.12.3
 graphql-compiler==1.10.1
 jupyter==1.0.0
